@@ -11,7 +11,7 @@ npm install ts-key-enum --save
 
 ## Purpose
 
-Tired of referencing JavaScript keys with a string?
+Tired of referencing keyboard keys with a string?
 
 ```JavaScript
 onKeyPress = (ev) => {
