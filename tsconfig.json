@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "declarationDir": "dist/declarations",
+        "module": "commonjs",
+        "target": "es5",
+        "outDir": "dist/js"
+    },
+    "files": ["Key.enum.ts"]
+}

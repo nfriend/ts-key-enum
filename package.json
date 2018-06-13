@@ -1,0 +1,38 @@
+{
+    "name": "ts-key-enum",
+    "version": "1.0.0",
+    "description": "A TypeScript string enum for compile-time safety when working with event.key",
+    "main": "dist/js/Key.enum.js",
+    "types": "dist/declarations/Key.enum.d.ts",
+    "scripts": {
+        "build": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nfriend/ts-key-enum.git"
+    },
+    "keywords": [
+        "typescript",
+        "javascript",
+        "keycodes",
+        "key",
+        "enum",
+        "ts",
+        "event.which",
+        "event.key",
+        "event.keycode"
+    ],
+    "author": {
+        "name": "Nathan Friend",
+        "email": "hello@nathanfriend.io",
+        "url": "https://nathanfriend.io"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/nfriend/ts-key-enum/issues"
+    },
+    "homepage": "https://github.com/nfriend/ts-key-enum#readme",
+    "devDependencies": {
+        "typescript": "^2.9.1"
+    }
+}
