@@ -44,6 +44,8 @@ export enum Key {
     Percent = '%',
     Six = '6',
     Caret = '^',
+
+    /** something */
     Hat = Caret,
     Seven = '7',
     Ampersand = '&',
