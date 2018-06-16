@@ -78,7 +78,7 @@ Next, run the scraper script ([`scrapeMDNForKeys.js`](./scrapeMDNForKeys.js)) us
 npm run scrape
 ```
 
-This will overwrite [`Key.enum.ts'](./Key.enum.ts) with the updated list of keys found in MDN.
+This will overwrite [`Key.enum.ts`](./Key.enum.ts) with the updated list of keys found in MDN.
 
 Finally, run the build using
 
