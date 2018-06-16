@@ -16,8 +16,8 @@ Tired of referencing keyboard keys with a string?
 ```JavaScript
 onKeyPress = (ev) => {
 
-    // whoops, spelled "Enter" wrong!
-    if (ev.key === 'ENter') {
+    // whoops, it's actually ArrowLeft!
+    if (ev.key === 'LeftArrow') {
         ...
     }
 }
@@ -29,7 +29,7 @@ Me too.  With this module, you can do this instead (in a TypeScript file):
 onKeyPress = (ev) => {
 
     // much better
-    if (ev.key === Key.Enter) {
+    if (ev.key === Key.ArrowLeft) {
         ...
     }
 }
@@ -54,16 +54,15 @@ You can now use the enum value in place of key strings throughout the file:
 if (ev.key === Key.Escape) { ... }
 ```
 
-See [Key.enum.ts](./Key.enum.ts) for a complete list of available keys.
+See [`Key.enum.ts`](./Key.enum.ts) for a complete list of available keys.  This file is auto-generated from the list of keys found at MDN: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values.
 
-In addition, to aid with readability, a number of enum values have aliases.  For example:
+## What's included
+
+The `Key` enum contains values for all standard non-printable keys such as "CapsLock", "Backspace", and "AudioVolumeMute".  The enum does not contain values for printable keys such as "a", "A", "#", "é", or "¿", simply because the list of possible values is too vast to include in a single enum.  To test for printable values, simply use a string comparison:
 
 ```JavaScript
-// this is true - these values are equal
-Key.Hash === Key.Pound
+if (ev.key === 'é') { ... }
 ```
-
-Use whichever value makes more sense for readability.
 
 ## Building
 
@@ -73,17 +72,21 @@ To build this module yourself, first install its dependencies using
 npm install
 ```
 
-Then, run the build using
+Next, run the scraper script ([`scrapeMDNForKeys.js`](./scrapeMDNForKeys.js)) using
+
+```bash
+npm run scrape
+```
+
+This will overwrite [`Key.enum.ts'](./Key.enum.ts) with the updated list of keys found in MDN.
+
+Finally, run the build using
 
 ```bash
 npm run build
 ```
 
 Build output is placed in the `dist` directory.
-
-## Contributions
-
-This module only contains some of the most commonly-used key string values.  There are many more, as you can see by taking a look at [this complete list](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values). If this module is missing enum values that you need, feel free to request the additions via an issue or a pull request.
 
 ## License
 
