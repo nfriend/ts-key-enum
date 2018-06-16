@@ -1,16 +1,19 @@
-const rp = require('request-promise');
-const cheerio = require('cheerio');
-const chalk = require('chalk');
-const bluebird = require('bluebird');
-const writeFile = bluebird.promisify(require('fs').writeFile);
-const _ = require('lodash');
+import * as rp from 'request-promise';
+import * as cheerio from 'cheerio';
+import chalk from 'chalk';
+import * as bluebird from 'bluebird';
+import { writeFile } from 'fs';
+import * as _ from 'lodash';
+
+const writeFileAsync = bluebird.promisify(writeFile);
 
 (async () => {
-    const mdnUrl = `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values#Speech_recognition_keys`;
+    const mdnUrl =
+        'https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values#Speech_recognition_keys';
 
     console.info(chalk.gray('Making GET request to MDN...'));
 
-    const pageHtml = await rp(mdnUrl);
+    const pageHtml: string = await rp(mdnUrl);
 
     console.info(chalk.gray('Successfully received response from MDN.'));
 
@@ -19,8 +22,10 @@ const _ = require('lodash');
     const $ = cheerio.load(pageHtml);
 
     // the list of of all keys found in the page.
-    // Each entry contains a "value" and "description" property
-    let keys = [];
+    let keys: {
+        value: string;
+        description: string;
+    }[] = [];
 
     // extracts the key name (i.e. LaunchCalculator) i.e.
     // from a string like "LaunchCalculator" [5].
@@ -54,28 +59,32 @@ const _ = require('lodash');
 
     console.info(chalk.gray('Eliminating duplicate keys...'));
 
+    // elimination of duplicate key is necessary because
+    // (at the time of writing) there is one duplicate entry on
+    // the page - "Clear".
     keys = _.uniqBy(keys, k => k.value);
 
     console.info(chalk.gray('Generating .ts file...'));
 
-    let enumFile = `/**\n`;
-    enumFile += `  * An enum that includes all non-printable string values one can expect from $event.key.\n`;
-    enumFile += `  * For example, this enum includes values like "CapsLock", "Backspace", and "AudioVolumeMute",\n`;
-    enumFile += `  * but does not include values like "a", "A", "#", "é", or "¿".\n`;
-    enumFile += `  * Auto generated from MDN: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values#Speech_recognition_keys\n`;
-    enumFile += `  */\n`;
-    enumFile += `export enum Key {\n\n`;
-    enumFile += keys
-        .map(k => {
-            // prettier-ignore
-            return `    /** ${k.description} */\n    ${k.value} = '${k.value}',\n\n`;
-        })
-        .join('');
-    enumFile += '}';
+    const enumFile =
+        `/**\n` +
+        `  * An enum that includes all non-printable string values one can expect from $event.key.\n` +
+        `  * For example, this enum includes values like "CapsLock", "Backspace", and "AudioVolumeMute",\n` +
+        `  * but does not include values like "a", "A", "#", "é", or "¿".\n` +
+        `  * Auto generated from MDN: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values#Speech_recognition_keys\n` +
+        `  */\n` +
+        `export enum Key {\n\n` +
+        keys
+            .map(k => {
+                // prettier-ignore
+                return `    /** ${k.description} */\n    ${k.value} = '${k.value}',`;
+            })
+            .join('\n\n') +
+        '\n}';
 
-    console.info(chalk.gray('Writing file to Key.enum.ts...'));
+    console.info(chalk.gray('Writing result to Key.enum.ts...'));
 
-    await writeFile('./Key.enum.ts', enumFile);
+    await writeFileAsync('./Key.enum.ts', enumFile);
 
     console.info(chalk.green('✓ All done! Successfully updated Key.enum.ts.'));
 })();

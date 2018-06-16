@@ -1,47 +1,53 @@
 {
-    "name": "ts-key-enum",
-    "version": "2.0.0",
-    "description": "A TypeScript string enum for compile-time safety when working with event.key",
-    "main": "dist/js/Key.enum.js",
-    "files": [
-        "dist/"
-    ],
-    "types": "dist/declarations/Key.enum.d.ts",
-    "scripts": {
-        "build": "tsc",
-        "scrape": "node scrapeMDNForKeys.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/nfriend/ts-key-enum.git"
-    },
-    "keywords": [
-        "typescript",
-        "javascript",
-        "keycodes",
-        "key",
-        "enum",
-        "ts",
-        "event.which",
-        "event.key",
-        "event.keycode"
-    ],
-    "author": {
-        "name": "Nathan Friend",
-        "email": "hello@nathanfriend.io",
-        "url": "https://nathanfriend.io"
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/nfriend/ts-key-enum/issues"
-    },
-    "homepage": "https://github.com/nfriend/ts-key-enum#readme",
-    "devDependencies": {
-        "bluebird": "^3.5.1",
-        "chalk": "^2.4.1",
-        "cheerio": "^1.0.0-rc.2",
-        "request": "^2.87.0",
-        "request-promise": "^4.2.2",
-        "typescript": "^2.9.1"
-    }
+  "name": "ts-key-enum",
+  "version": "2.0.0",
+  "description": "A TypeScript string enum for compile-time safety when working with event.key",
+  "main": "dist/js/Key.enum.js",
+  "files": [
+    "dist/"
+  ],
+  "types": "dist/declarations/Key.enum.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "scrape": "./node_modules/.bin/ts-node scrapeMDNForKeys.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nfriend/ts-key-enum.git"
+  },
+  "keywords": [
+    "typescript",
+    "javascript",
+    "keycodes",
+    "key",
+    "enum",
+    "ts",
+    "event.which",
+    "event.key",
+    "event.keycode"
+  ],
+  "author": {
+    "name": "Nathan Friend",
+    "email": "hello@nathanfriend.io",
+    "url": "https://nathanfriend.io"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nfriend/ts-key-enum/issues"
+  },
+  "homepage": "https://github.com/nfriend/ts-key-enum#readme",
+  "devDependencies": {
+    "@types/bluebird": "^3.5.20",
+    "@types/cheerio": "^0.22.7",
+    "@types/lodash": "^4.14.109",
+    "@types/request": "^2.47.1",
+    "@types/request-promise": "^4.1.41",
+    "bluebird": "^3.5.1",
+    "chalk": "^2.4.1",
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
+    "ts-node": "^6.1.1",
+    "typescript": "^2.9.1"
+  }
 }

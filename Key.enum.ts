@@ -959,5 +959,4 @@ export enum Key {
 
     /** The numeric keypad's places separator character (in the United States, this is a comma, but elsewhere it is frequently a period). */
     Separator = 'Separator',
-
 }

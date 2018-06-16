@@ -4,7 +4,8 @@
         "declarationDir": "dist/declarations",
         "module": "commonjs",
         "target": "es5",
-        "outDir": "dist/js"
+        "outDir": "dist/js",
+        "lib": ["es5", "es6"]
     },
     "files": ["Key.enum.ts"]
 }

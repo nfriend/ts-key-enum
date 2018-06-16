@@ -72,7 +72,7 @@ To build this module yourself, first install its dependencies using
 npm install
 ```
 
-Next, run the scraper script ([`scrapeMDNForKeys.js`](./scrapeMDNForKeys.js)) using
+Next, run the scraper script ([`scrapeMDNForKeys.ts`](./scrapeMDNForKeys.ts)) using
 
 ```bash
 npm run scrape
