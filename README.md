@@ -58,7 +58,7 @@ See [`Key.enum.ts`](./Key.enum.ts) for a complete list of available keys.  This 
 
 ## What's included
 
-The `Key` enum contains values for all standard non-printable keys such as "CapsLock", "Backspace", and "AudioVolumeMute".  The enum does not contain values for printable keys such as "a", "A", "#", "é", or "¿", simply because the list of possible values is too vast to include in a single enum.  To test for printable values, simply use a string comparison:
+The `Key` enum contains values for all standard non-printable keys such as "CapsLock", "Backspace", and "AudioVolumeMute".  The enum does _not_ contain values for printable keys such as "a", "A", "#", "é", or "¿", simply because the list of possible values is too vast to include in a single enum.  To test for printable values, simply use a string comparison:
 
 ```JavaScript
 if (ev.key === 'é') { ... }
