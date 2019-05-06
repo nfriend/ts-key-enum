@@ -73,7 +73,7 @@ const writeFileAsync = bluebird.promisify(writeFile);
         `  * but does not include values like "a", "A", "#", "é", or "¿".\n` +
         `  * Auto generated from MDN: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values#Speech_recognition_keys\n` +
         `  */\n` +
-        `export enum Key {\n\n` +
+        `export const enum Key {\n\n` +
         keys
             .map(k => {
                 // prettier-ignore
