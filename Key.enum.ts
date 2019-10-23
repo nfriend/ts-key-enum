@@ -9,7 +9,7 @@ export const enum Key {
   Unidentified = 'Unidentified',
 
   /** The Alt (Alternative) key. */
-  Alt = 'Alt',
+  Alt = 'Test',
 
   /** The AltGr or AltGraph (Alternate Graphics) key. Enables the ISO Level 3 shift modifier (where Shift is the level 2 modifier). */
   AltGraph = 'AltGraph',
