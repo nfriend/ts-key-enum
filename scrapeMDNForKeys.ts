@@ -1,9 +1,10 @@
-import * as rp from 'request-promise';
+import rp from 'request-promise';
 import * as cheerio from 'cheerio';
 import chalk from 'chalk';
 import bluebird from 'bluebird';
 import { writeFile } from 'fs';
 import _ from 'lodash';
+import moment from 'moment';
 
 const writeFileAsync = bluebird.promisify(writeFile);
 
@@ -72,6 +73,7 @@ const writeFileAsync = bluebird.promisify(writeFile);
     ` * For example, this enum includes values like "CapsLock", "Backspace", and "AudioVolumeMute",\n` +
     ` * but does not include values like "a", "A", "#", "é", or "¿".\n` +
     ` * Auto generated from MDN: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values#Speech_recognition_keys\n` +
+    ` * on ${moment().format('')}\n` +
     ` */\n` +
     `export enum Key {\n` +
     keys

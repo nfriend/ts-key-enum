@@ -45,6 +45,7 @@
     "bluebird": "3.7.1",
     "chalk": "2.4.2",
     "cheerio": "1.0.0-rc.3",
+    "moment": "2.24.0",
     "request": "2.88.0",
     "request-promise": "4.2.4",
     "ts-node": "8.4.1",

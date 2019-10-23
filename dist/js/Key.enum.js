@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
-  * An enum that includes all non-printable string values one can expect from $event.key.
-  * For example, this enum includes values like "CapsLock", "Backspace", and "AudioVolumeMute",
-  * but does not include values like "a", "A", "#", "é", or "¿".
-  * Auto generated from MDN: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values#Speech_recognition_keys
-  */
+ * An enum that includes all non-printable string values one can expect from $event.key.
+ * For example, this enum includes values like "CapsLock", "Backspace", and "AudioVolumeMute",
+ * but does not include values like "a", "A", "#", "é", or "¿".
+ * Auto generated from MDN: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values#Speech_recognition_keys
+ * on 2019-10-23T14:46:54-03:00
+ */
 var Key;
 (function (Key) {
     /** The user agent wasn't able to map the event's virtual keycode to a specific key value. This can happen due to hardware or software constraints, or because of constraints around the platform on which the user agent is running. */
@@ -103,12 +104,12 @@ var Key;
     /** The Help key. Opens or toggles the display of help information. */
     Key["Help"] = "Help";
     /** The Pause key. Pauses the current application or state, if applicable.
-    This shouldn't be confused with the "MediaPause" key value, which is used for media controllers, rather than to control applications and processes.
-    */
+      This shouldn't be confused with the "MediaPause" key value, which is used for media controllers, rather than to control applications and processes.
+      */
     Key["Pause"] = "Pause";
     /** The Play key. Resumes a previously paused application, if applicable.
-    This shouldn't be confused with the "MediaPlay" key value, which is used for media controllers, rather than to control applications and processes.
-    */
+      This shouldn't be confused with the "MediaPlay" key value, which is used for media controllers, rather than to control applications and processes.
+      */
     Key["Play"] = "Play";
     /** The Props (Properties) key. */
     Key["Props"] = "Props";
@@ -127,8 +128,8 @@ var Key;
     /** The LogOff key. */
     Key["LogOff"] = "LogOff";
     /** The Power button or key, to toggle power on and off.
-    Not all systems pass this key through to to the user agent.
-    */
+      Not all systems pass this key through to to the user agent.
+      */
     Key["Power"] = "Power";
     /** The PowerOff or PowerDown key. Shuts off the system. */
     Key["PowerOff"] = "PowerOff";
