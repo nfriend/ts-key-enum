@@ -30,5 +30,5 @@ lint generated:
     - ci/verify-generated.sh
 
 dependency_scanning:
-  before_script:
+  before_script: []
   stage: lint
