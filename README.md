@@ -1,5 +1,9 @@
 # ts-key-enum
 
+<a href="https://gitlab.com/nfriend/ts-key-enum/pipelines/latest" target="_blank">
+    <img src="https://gitlab.com/nfriend/ts-key-enum/badges/master/pipeline.svg" alt="GitLab build status">
+</a>
+
 A TypeScript string enum for compile-time safety when working with `event.key`.
 
 <img align="right" src="https://raw.githubusercontent.com/nfriend/ts-key-enum/master/logo.jpg" />
