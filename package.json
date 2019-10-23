@@ -1,6 +1,6 @@
 {
   "name": "ts-key-enum",
-  "version": "2.0.0",
+  "version": "3.0.0-rc1",
   "description": "A TypeScript string enum for compile-time safety when working with event.key",
   "main": "dist/js/Key.enum.js",
   "files": [
