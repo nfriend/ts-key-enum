@@ -8,7 +8,7 @@ export declare const enum Key {
     /** The user agent wasn't able to map the event's virtual keycode to a specific key value. This can happen due to hardware or software constraints, or because of constraints around the platform on which the user agent is running. */
     Unidentified = "Unidentified",
     /** The Alt (Alternative) key. */
-    Alt = "Alt",
+    Alt = "Test",
     /** The AltGr or AltGraph (Alternate Graphics) key. Enables the ISO Level 3 shift modifier (where Shift is the level 2 modifier). */
     AltGraph = "AltGraph",
     /** The Caps Lock key. Toggles the capital character lock on and off for subsequent input. */
