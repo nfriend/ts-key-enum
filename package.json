@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nfriend/ts-key-enum.git"
+    "url": "git+https://gitlab.com/nfriend/ts-key-enum.git"
   },
   "keywords": [
     "typescript",
@@ -33,9 +33,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nfriend/ts-key-enum/issues"
+    "url": "https://gitlab.com/nfriend/ts-key-enum/issues"
   },
-  "homepage": "https://github.com/nfriend/ts-key-enum#readme",
+  "homepage": "https://gitlab.com/nfriend/ts-key-enum#readme",
   "devDependencies": {
     "@types/bluebird": "3.5.28",
     "@types/cheerio": "0.22.13",
