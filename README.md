@@ -1,4 +1,5 @@
 # ts-key-enum
+
 A TypeScript string enum for compile-time safety when working with `event.key`.
 
 <img align="right" src="https://raw.githubusercontent.com/nfriend/ts-key-enum/master/logo.jpg" />
@@ -23,7 +24,7 @@ onKeyPress = (ev) => {
 }
 ```
 
-Me too.  With this module, you can do this instead (in a TypeScript file):
+Me too. With this module, you can do this instead (in a TypeScript file):
 
 ```JavaScript
 onKeyPress = (ev) => {
@@ -54,11 +55,11 @@ You can now use the enum value in place of key strings throughout the file:
 if (ev.key === Key.Escape) { ... }
 ```
 
-See [`Key.enum.ts`](./Key.enum.ts) for a complete list of available keys.  This file is auto-generated from the list of keys found at MDN: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values.
+See [`Key.enum.ts`](./Key.enum.ts) for a complete list of available keys. This file is auto-generated from the list of keys found at MDN: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values.
 
 ## What's included
 
-The `Key` enum contains values for all standard non-printable keys such as "CapsLock", "Backspace", and "AudioVolumeMute".  The enum does _not_ contain values for printable keys such as "a", "A", "#", "é", or "¿", simply because the list of possible values is too vast to include in a single enum.  To test for printable values, simply use a string comparison:
+The `Key` enum contains values for all standard non-printable keys such as "CapsLock", "Backspace", and "AudioVolumeMute". The enum does _not_ contain values for printable keys such as "a", "A", "#", "é", or "¿", simply because the list of possible values is too vast to include in a single enum. To test for printable values, simply use a string comparison:
 
 ```JavaScript
 if (ev.key === 'é') { ... }

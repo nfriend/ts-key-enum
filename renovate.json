@@ -1,5 +1,5 @@
 {
-    "extends": ["config:base", ":automergeMinor"],
-    "labels": ["renovate", "dependencies"],
-    "assignees": ["nfriend"]
+  "extends": ["config:base", ":automergeMinor"],
+  "labels": ["renovate", "dependencies"],
+  "assignees": ["nfriend"]
 }
