@@ -3,9 +3,8 @@
  * For example, this enum includes values like "CapsLock", "Backspace", and "AudioVolumeMute",
  * but does not include values like "a", "A", "#", "é", or "¿".
  * Auto generated from MDN: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values#Speech_recognition_keys
- * on 2019-10-23T14:46:54-03:00
  */
-export declare enum Key {
+export declare const enum Key {
     /** The user agent wasn't able to map the event's virtual keycode to a specific key value. This can happen due to hardware or software constraints, or because of constraints around the platform on which the user agent is running. */
     Unidentified = "Unidentified",
     /** The Alt (Alternative) key. */
@@ -100,13 +99,15 @@ export declare enum Key {
     Finish = "Finish",
     /** The Help key. Opens or toggles the display of help information. */
     Help = "Help",
-    /** The Pause key. Pauses the current application or state, if applicable.
-      This shouldn't be confused with the "MediaPause" key value, which is used for media controllers, rather than to control applications and processes.
-      */
+    /**
+     * The Pause key. Pauses the current application or state, if applicable.
+     * This shouldn't be confused with the "MediaPause" key value, which is used for media controllers, rather than to control applications and processes.
+     */
     Pause = "Pause",
-    /** The Play key. Resumes a previously paused application, if applicable.
-      This shouldn't be confused with the "MediaPlay" key value, which is used for media controllers, rather than to control applications and processes.
-      */
+    /**
+     * The Play key. Resumes a previously paused application, if applicable.
+     * This shouldn't be confused with the "MediaPlay" key value, which is used for media controllers, rather than to control applications and processes.
+     */
     Play = "Play",
     /** The Props (Properties) key. */
     Props = "Props",
@@ -124,9 +125,10 @@ export declare enum Key {
     Eject = "Eject",
     /** The LogOff key. */
     LogOff = "LogOff",
-    /** The Power button or key, to toggle power on and off.
-      Not all systems pass this key through to to the user agent.
-      */
+    /**
+     * The Power button or key, to toggle power on and off.
+     * Not all systems pass this key through to to the user agent.
+     */
     Power = "Power",
     /** The PowerOff or PowerDown key. Shuts off the system. */
     PowerOff = "PowerOff",

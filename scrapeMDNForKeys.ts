@@ -4,7 +4,6 @@ import chalk from 'chalk';
 import bluebird from 'bluebird';
 import { writeFile } from 'fs';
 import _ from 'lodash';
-import moment from 'moment';
 
 const writeFileAsync = bluebird.promisify(writeFile);
 
@@ -67,25 +66,43 @@ const writeFileAsync = bluebird.promisify(writeFile);
 
   console.info(chalk.gray('Generating .ts file...'));
 
-  const enumFile =
-    `/**\n` +
-    ` * An enum that includes all non-printable string values one can expect from $event.key.\n` +
-    ` * For example, this enum includes values like "CapsLock", "Backspace", and "AudioVolumeMute",\n` +
-    ` * but does not include values like "a", "A", "#", "é", or "¿".\n` +
-    ` * Auto generated from MDN: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values#Speech_recognition_keys\n` +
-    ` * on ${moment().format('')}\n` +
-    ` */\n` +
-    `export enum Key {\n` +
+  const enumFileLines = [
+    '/**',
+    ' * An enum that includes all non-printable string values one can expect from $event.key.',
+    ' * For example, this enum includes values like "CapsLock", "Backspace", and "AudioVolumeMute",',
+    ' * but does not include values like "a", "A", "#", "é", or "¿".',
+    ' * Auto generated from MDN: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values#Speech_recognition_keys',
+    ' */',
+    'export const enum Key {',
     keys
       .map(k => {
-        return `  /** ${k.description} */\n  ${k.value} = '${k.value}',`;
+        let formattedDescription;
+
+        if (k.description.includes('\n')) {
+          // This is multi-line description
+          formattedDescription = [
+            '  /**',
+            ...k.description
+              .trim()
+              .split(/\n\s*/)
+              .map(s => `   * ${s.trim()}`),
+            '   */',
+          ].join('\n');
+        } else {
+          // This is a single-line description
+          formattedDescription = `  /** ${k.description} */`;
+        }
+
+        return `${formattedDescription}\n  ${k.value} = '${k.value}',`;
       })
-      .join('\n\n') +
-    '\n}\n';
+      .join('\n\n'),
+    '}',
+    '',
+  ];
 
   console.info(chalk.gray('Writing result to Key.enum.ts...'));
 
-  await writeFileAsync('./Key.enum.ts', enumFile);
+  await writeFileAsync('./Key.enum.ts', enumFileLines.join('\n'));
 
   console.info(chalk.green('✓ All done! Successfully updated Key.enum.ts.'));
 })();

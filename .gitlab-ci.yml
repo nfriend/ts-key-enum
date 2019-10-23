@@ -1,0 +1,33 @@
+image: node:latest
+
+stages:
+  - lint
+
+include:
+  template: Dependency-Scanning.gitlab-ci.yml
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+before_script:
+  - npm install
+
+prettier:
+  - stage: lint
+  script:
+    - npm run prettier
+
+tslint:
+  - stage: lint
+  script:
+    - npm run tslint
+
+lint generated:
+  - stage: lint
+  script:
+    - ci/verify-generated.sh
+
+dependency_scanning:
+  stage: lint

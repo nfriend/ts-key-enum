@@ -9,7 +9,13 @@
   "types": "dist/declarations/Key.enum.d.ts",
   "scripts": {
     "build": "tsc",
-    "scrape": "./node_modules/.bin/ts-node scrapeMDNForKeys.ts"
+    "scrape": "./node_modules/.bin/ts-node scrapeMDNForKeys.ts",
+    "tslint": "tslint -p .",
+    "tslint-fix": "tslint -p . --fix",
+    "prettier": "prettier --check '**/*.ts' '!dist/**'",
+    "prettier-fix": "prettier --write '**/*.ts' '!dist/**'",
+    "lint": "npm run prettier; npm run tslint",
+    "lint-fix": "npm run prettier-fix; npm run tslint-fix"
   },
   "repository": {
     "type": "git",
@@ -45,10 +51,11 @@
     "bluebird": "3.7.1",
     "chalk": "2.4.2",
     "cheerio": "1.0.0-rc.3",
-    "moment": "2.24.0",
+    "prettier": "^1.18.2",
     "request": "2.88.0",
     "request-promise": "4.2.4",
     "ts-node": "8.4.1",
+    "tslint": "^5.20.0",
     "typescript": "3.6.4"
   }
 }
