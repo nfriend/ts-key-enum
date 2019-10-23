@@ -15,17 +15,17 @@ before_script:
   - npm install
 
 prettier:
-  - stage: lint
+  stage: lint
   script:
     - npm run prettier
 
 tslint:
-  - stage: lint
+  stage: lint
   script:
     - npm run tslint
 
 lint generated:
-  - stage: lint
+  stage: lint
   script:
     - ci/verify-generated.sh
 
