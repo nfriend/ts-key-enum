@@ -10,7 +10,7 @@ A TypeScript string enum for compile-time safety when working with `event.key`.
 
 ## Install
 
-```bash
+```sh
 npm install ts-key-enum --save
 ```
 
@@ -18,7 +18,7 @@ npm install ts-key-enum --save
 
 Tired of referencing keyboard keys with a string?
 
-```JavaScript
+```js
 onKeyPress = (ev) => {
 
     // whoops, it's actually ArrowLeft!
@@ -30,7 +30,7 @@ onKeyPress = (ev) => {
 
 Me too. With this module, you can do this instead (in a TypeScript file):
 
-```JavaScript
+```ts
 onKeyPress = (ev) => {
 
     // much better
@@ -48,13 +48,13 @@ This is similar to the [ts-keycode-enum](https://github.com/nfriend/ts-keycode-e
 
 To use this module, import the `Key` enum at the top of your TypeScript file:
 
-```JavaScript
+```js
 import { Key } from 'ts-key-enum';
 ```
 
 You can now use the enum value in place of key strings throughout the file:
 
-```JavaScript
+```js
 // if (ev.key === 'Escape') { ... }
 if (ev.key === Key.Escape) { ... }
 ```
@@ -65,7 +65,7 @@ See [`Key.enum.ts`](./Key.enum.ts) for a complete list of available keys. This f
 
 The `Key` enum contains values for all standard non-printable keys such as "CapsLock", "Backspace", and "AudioVolumeMute". The enum does _not_ contain values for printable keys such as "a", "A", "#", "é", or "¿", simply because the list of possible values is too vast to include in a single enum. To test for printable values, simply use a string comparison:
 
-```JavaScript
+```js
 if (ev.key === 'é') { ... }
 ```
 
@@ -73,13 +73,13 @@ if (ev.key === 'é') { ... }
 
 To build this module yourself, first install its dependencies using
 
-```bash
+```sh
 npm install
 ```
 
 Next, run the scraper script ([`scrapeMDNForKeys.ts`](./scrapeMDNForKeys.ts)) using
 
-```bash
+```sh
 npm run scrape
 ```
 
@@ -87,7 +87,7 @@ This will overwrite [`Key.enum.ts`](./Key.enum.ts) with the updated list of keys
 
 Finally, run the build using
 
-```bash
+```sh
 npm run build
 ```
 
