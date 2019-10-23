@@ -37,17 +37,17 @@
   },
   "homepage": "https://github.com/nfriend/ts-key-enum#readme",
   "devDependencies": {
-    "@types/bluebird": "^3.5.20",
-    "@types/cheerio": "^0.22.7",
-    "@types/lodash": "^4.14.109",
-    "@types/request": "^2.47.1",
-    "@types/request-promise": "^4.1.41",
-    "bluebird": "^3.5.1",
-    "chalk": "^2.4.1",
-    "cheerio": "^1.0.0-rc.2",
-    "request": "^2.87.0",
-    "request-promise": "^4.2.2",
-    "ts-node": "^6.1.1",
-    "typescript": "^2.9.1"
+    "@types/bluebird": "3.5.28",
+    "@types/cheerio": "0.22.13",
+    "@types/lodash": "4.14.144",
+    "@types/request": "2.48.3",
+    "@types/request-promise": "4.1.44",
+    "bluebird": "3.7.1",
+    "chalk": "2.4.2",
+    "cheerio": "1.0.0-rc.3",
+    "request": "2.88.0",
+    "request-promise": "4.2.4",
+    "ts-node": "8.4.1",
+    "typescript": "3.6.4"
   }
 }
