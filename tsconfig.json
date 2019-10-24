@@ -1,11 +1,12 @@
 {
-    "compilerOptions": {
-        "declaration": true,
-        "declarationDir": "dist/declarations",
-        "module": "commonjs",
-        "target": "es5",
-        "outDir": "dist/js",
-        "lib": ["es5", "es6"]
-    },
-    "files": ["Key.enum.ts"]
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "dist/declarations",
+    "module": "commonjs",
+    "target": "es5",
+    "outDir": "dist/js",
+    "lib": ["es5", "es6"],
+    "esModuleInterop": true
+  },
+  "files": ["Key.enum.ts"]
 }

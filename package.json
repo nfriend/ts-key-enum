@@ -9,11 +9,17 @@
   "types": "dist/declarations/Key.enum.d.ts",
   "scripts": {
     "build": "tsc",
-    "scrape": "./node_modules/.bin/ts-node scrapeMDNForKeys.ts"
+    "scrape": "./node_modules/.bin/ts-node scrapeMDNForKeys.ts",
+    "tslint": "tslint -p .",
+    "tslint-fix": "tslint -p . --fix",
+    "prettier": "prettier --check '**/*.ts' '!dist/**'",
+    "prettier-fix": "prettier --write '**/*.ts' '!dist/**'",
+    "lint": "npm run prettier; npm run tslint",
+    "lint-fix": "npm run prettier-fix; npm run tslint-fix"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nfriend/ts-key-enum.git"
+    "url": "git+https://gitlab.com/nfriend/ts-key-enum.git"
   },
   "keywords": [
     "typescript",
@@ -33,21 +39,23 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nfriend/ts-key-enum/issues"
+    "url": "https://gitlab.com/nfriend/ts-key-enum/issues"
   },
-  "homepage": "https://github.com/nfriend/ts-key-enum#readme",
+  "homepage": "https://gitlab.com/nfriend/ts-key-enum#readme",
   "devDependencies": {
-    "@types/bluebird": "^3.5.20",
-    "@types/cheerio": "^0.22.7",
-    "@types/lodash": "^4.14.109",
-    "@types/request": "^2.47.1",
-    "@types/request-promise": "^4.1.41",
-    "bluebird": "^3.5.1",
-    "chalk": "^2.4.1",
-    "cheerio": "^1.0.0-rc.2",
-    "request": "^2.87.0",
-    "request-promise": "^4.2.2",
-    "ts-node": "^6.1.1",
-    "typescript": "^2.9.1"
+    "@types/bluebird": "3.5.28",
+    "@types/cheerio": "0.22.13",
+    "@types/lodash": "4.14.144",
+    "@types/request": "2.48.3",
+    "@types/request-promise": "4.1.44",
+    "bluebird": "3.7.1",
+    "chalk": "2.4.2",
+    "cheerio": "1.0.0-rc.3",
+    "prettier": "^1.18.2",
+    "request": "2.88.0",
+    "request-promise": "4.2.4",
+    "ts-node": "8.4.1",
+    "tslint": "^5.20.0",
+    "typescript": "3.6.4"
   }
 }
