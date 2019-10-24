@@ -1,5 +1,5 @@
 /**
- * An enum that includes all non-printable string values one can expect from $event.key.
+ * A const enum that includes all non-printable string values one can expect from $event.key.
  * For example, this enum includes values like "CapsLock", "Backspace", and "AudioVolumeMute",
  * but does not include values like "a", "A", "#", "é", or "¿".
  * Auto generated from MDN: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values#Speech_recognition_keys
