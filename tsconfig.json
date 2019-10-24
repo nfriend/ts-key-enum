@@ -8,5 +8,5 @@
     "lib": ["es5", "es6"],
     "esModuleInterop": true
   },
-  "files": ["Key.enum.ts"]
+  "files": ["Key.enum.d.ts"]
 }

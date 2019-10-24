@@ -59,7 +59,7 @@ You can now use the enum value in place of key strings throughout the file:
 if (ev.key === Key.Escape) { ... }
 ```
 
-See [`Key.enum.ts`](./Key.enum.ts) for a complete list of available keys. This file is auto-generated from the list of keys found at MDN: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values.
+See [`Key.enum.d.ts`](./Key.enum.d.ts) for a complete list of available keys. This file is auto-generated from the list of keys found at MDN: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values.
 
 ## What's included
 
@@ -71,7 +71,7 @@ if (ev.key === 'é') { ... }
 
 ## v2 vs v3
 
-This package is published as two versions on NPM: `v2.x` and `v3.x`.
+This package is published as two versions on [NPM](https://www.npmjs.com/package/ts-key-enum): `v2.x` and `v3.x`.
 
 ### v2
 
@@ -91,7 +91,7 @@ The end result is a JavaScript object that contains every enum value. You can se
 export const enum Key { ... }
 ```
 
-This allows the enum's definition to live entirely in the definition file `https://gitlab.com/nfriend/ts-key-enum/blob/master/Key.enum.d.ts`. Consumers can use this enum without including _all_ of the enum's values in their own JavaScript bundle; only the values referenced in their code will be injected into their bundle.
+This allows the enum's definition to live entirely in the definition file `https://gitlab.com/nfriend/ts-key-enum/blob/master/Key.enum.d.ts`. Consumers can use this enum without including _all_ of the enum's values in their own JavaScript bundle; only the values referenced in their code will be injected into their output file.
 
 ## Which version should I use?
 
@@ -102,27 +102,31 @@ It's advisable to use `v3.x` unless you have a reason to use `v2.x`. Some reason
 
 ## Building
 
-To build this module yourself, first install its dependencies using
+To build this module yourself, first install its dependencies using:
 
 ```sh
 npm install
 ```
 
-Next, run the scraper script ([`scrapeMDNForKeys.ts`](./scrapeMDNForKeys.ts)) using
+Next, run the scraper script ([`scrapeMDNForKeys.ts`](./scrapeMDNForKeys.ts)) using:
 
 ```sh
 npm run scrape
 ```
 
-This will overwrite [`Key.enum.ts`](./Key.enum.ts) with the updated list of keys found in MDN.
+This will overwrite [`Key.enum.d.ts`](./Key.enum.d.ts) with the updated list of keys found in MDN.
 
-Finally, run the build using
+Verify that the enum builds without any TypeScript errors:
 
 ```sh
 npm run build
 ```
 
-Build output is placed in the `dist` directory.
+Finally, make sure the enum passes all linters:
+
+```sh
+npm run lint
+```
 
 ## License
 

@@ -64,16 +64,16 @@ const writeFileAsync = bluebird.promisify(writeFile);
   // the page - "Clear".
   keys = _.uniqBy(keys, k => k.value);
 
-  console.info(chalk.gray('Generating .ts file...'));
+  console.info(chalk.gray('Generating .d.ts file...'));
 
   const enumFileLines = [
     '/**',
-    ' * An enum that includes all non-printable string values one can expect from $event.key.',
+    ' * A const enum that includes all non-printable string values one can expect from $event.key.',
     ' * For example, this enum includes values like "CapsLock", "Backspace", and "AudioVolumeMute",',
     ' * but does not include values like "a", "A", "#", "é", or "¿".',
     ' * Auto generated from MDN: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values#Speech_recognition_keys',
     ' */',
-    'export enum Key {',
+    'export declare const enum Key {',
     keys
       .map(k => {
         let formattedDescription;
@@ -100,9 +100,9 @@ const writeFileAsync = bluebird.promisify(writeFile);
     '',
   ];
 
-  console.info(chalk.gray('Writing result to Key.enum.ts...'));
+  console.info(chalk.gray('Writing result to Key.enum.d.ts...'));
 
-  await writeFileAsync('./Key.enum.ts', enumFileLines.join('\n'));
+  await writeFileAsync('./Key.enum.d.ts', enumFileLines.join('\n'));
 
-  console.info(chalk.green('✓ All done! Successfully updated Key.enum.ts.'));
+  console.info(chalk.green('✓ All done! Successfully updated Key.enum.d.ts.'));
 })();
