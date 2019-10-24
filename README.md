@@ -1,7 +1,23 @@
 # ts-key-enum
 
 <a href="https://gitlab.com/nfriend/ts-key-enum/pipelines/latest" target="_blank">
-    <img src="https://gitlab.com/nfriend/ts-key-enum/badges/master/pipeline.svg" alt="GitLab build status">
+    <img alt="GitLab build status" src="https://gitlab.com/nfriend/ts-key-enum/badges/master/pipeline.svg">
+</a>
+
+<a href="https://www.npmjs.com/package/ts-key-enum" target="_blank">
+    <img alt="npm version" src="https://img.shields.io/npm/v/ts-key-enum">
+</a>
+
+<a href="https://www.npmjs.com/package/ts-key-enum" target="_blank">
+    <img alt="types" src="https://img.shields.io/npm/types/ts-key-enum">
+</a>
+
+<a href="https://www.npmjs.com/package/ts-key-enum" target="_blank">
+    <img alt="npm downloads" src="https://img.shields.io/npm/dw/ts-key-enum">
+</a>
+
+<a href="https://gitlab.com/nfriend/ts-key-enum/blob/master/LICENSE" target="_blank">
+    <img alt="license" src="https://img.shields.io/npm/l/ts-key-enum">
 </a>
 
 A TypeScript string enum for compile-time safety when working with `event.key`.
