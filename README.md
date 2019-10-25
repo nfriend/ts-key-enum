@@ -30,6 +30,10 @@ A TypeScript string enum for compile-time safety when working with `event.key`.
 npm install ts-key-enum --save
 ```
 
+```sh
+yarn add ts-key-enum
+```
+
 ## Purpose
 
 Tired of referencing keyboard keys with a string?
