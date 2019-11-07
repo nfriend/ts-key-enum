@@ -45,7 +45,7 @@
   "devDependencies": {
     "@types/bluebird": "3.5.28",
     "@types/cheerio": "0.22.13",
-    "@types/lodash": "4.14.144",
+    "@types/lodash": "4.14.145",
     "@types/request": "2.48.3",
     "@types/request-promise": "4.1.44",
     "bluebird": "3.7.1",
