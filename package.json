@@ -43,7 +43,7 @@
   },
   "homepage": "https://gitlab.com/nfriend/ts-key-enum#readme",
   "devDependencies": {
-    "@types/bluebird": "3.5.28",
+    "@types/bluebird": "3.5.29",
     "@types/cheerio": "0.22.13",
     "@types/lodash": "4.14.146",
     "@types/request": "2.48.3",
