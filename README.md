@@ -119,6 +119,9 @@ It's advisable to use `v3.x` unless you have a reason to use `v2.x`. Some reason
 
 - You are using this package as a JavaScript module (not a TypeScript module).
 - You are using TypeScript < `1.4`, which doesn't support `const enum`.
+- You are using [`@babel/plugin-transform-typescript`](https://babeljs.io/docs/en/babel-plugin-transform-typescript), which [does not support `const enum`](https://babeljs.io/docs/en/babel-plugin-transform-typescript#caveats).
+  - See #2 and https://github.com/babel/babel/issues/8741
+  - Alternatively, use [`babel-plugin-const-enum`](https://www.npmjs.com/package/babel-plugin-const-enum) to convert `const enum`s to regular `enum` in your development environment, allowing you to reap the benefits of `const enum`s in your production build (see https://www.npmjs.com/package/babel-plugin-const-enum#transform-removeconst-default).
 
 ## Building
 
