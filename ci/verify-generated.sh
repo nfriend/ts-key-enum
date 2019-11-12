@@ -7,7 +7,7 @@ npm run scrape
 # below doesn't correct detect changes otherwise ¯\＿(ツ)＿/¯
 git status
 
-if git diff-index --quiet HEAD --; then
+if git diff-index --quiet HEAD Key.enum.d.ts; then
     echo -e "\033[32;1mAll auto-generated files are up to date 👍\033[0m"
     exit 0
 else
